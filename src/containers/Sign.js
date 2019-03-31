@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
 import "./Sign.css";
+import { Button, FormGroup, Input, Form, Container, Label} from 'reactstrap';
 
 export default class Sign extends Component
 {
@@ -45,11 +46,12 @@ export default class Sign extends Component
     render()
     {
         return(
-            <div className="Sign">
-            <form onSubmit={this.handleChange}>
+            <Container className="Sign">
+            <h2> Sign up</h2>
+            <Form onSubmit={this.handleChange}>
             <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <FormControl
+            <Label>Email</Label>
+            <Input
              autoFocus
              type="email"
              value={this.state.email}
@@ -57,8 +59,8 @@ export default class Sign extends Component
              />
             </FormGroup>
             <FormGroup controlId="nick" bsSize="large">
-            <ControlLabel>Nick</ControlLabel>
-            <FormControl
+            <Label>Nick</Label>
+            <Input
              autoFocus
              type="nick"
              value={this.state.nick}
@@ -66,8 +68,8 @@ export default class Sign extends Component
              />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl
+            <Label>Password</Label>
+            <Input
              autoFocus
              type="password"
              value={this.state.password}
@@ -75,24 +77,19 @@ export default class Sign extends Component
              />
             </FormGroup>
             <FormGroup controlId="confirmPassword" bsSize="large">
-            <ControlLabel> Confirm Password</ControlLabel>
-            <FormControl
+            <Label> Confirm Password</Label>
+            <Input
              autoFocus
              type="password"
              value={this.state.confirmPassword}
              onChange={this.handleChange}
              />
             </FormGroup>
-            <Button
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-            type="submit"
-            >
+            <Button color="primary" >
             Submit
           </Button>
-            </form>
-           </div>
+            </Form>
+           </Container>
         );
     }
 }
