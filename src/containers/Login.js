@@ -61,7 +61,7 @@ export default class Login extends Component {
               type="email"
               name="email"
               id="examplemail"
-              placeholder="myemail@email.com"
+              placeholder="Email"
               value={this.state.email}
               valid={ this.state.validate.emailState === 'has-success' }
               invalid={ this.state.validate.emailState === 'has-danger' }
@@ -87,7 +87,7 @@ export default class Login extends Component {
             
               name="password"
               id="examplePassword"
-              placeholder="**********"
+              placeholder="Password"
               value={this.state.password}
               onChange={this.handleChange}
             />

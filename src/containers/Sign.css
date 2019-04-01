@@ -1,18 +1,38 @@
+
 .Sign{
-  text-align: left;
-  padding: 0.33em;
-  margin: 0.33em;
+  text-align: center;
+ /* padding: 60px 0;
+  margin: 50px;*/
+  
+  width: 30px;
+  height: 480px;
+  background-position: left;
+  position: relative;
+  /* margin-left: 350px;
+  margin-right: 350px; 
+  margin-top: 100px;
+  max-width: 320px;*/
+}
+
+
+/*.form {
   border: 2px solid #d3d3d3;
   border-radius: .5em;
   vertical-align: middle;
-  margin-left: 0.33em;
-  margin-right: 0.33em;
-  width: 300px;
-  margin-top: 100px;
-}
+  box-sizing: border-box;
+  padding: 50px;
+  max-width: 320px;
+}*/
 
-.form {
-  padding: 0.33em;
+.Sign form{
+  margin: 0 auto;
+  max-width: 320px;
+  border: 2px solid #d3d3d3;
+  border-radius: .5em;
+  vertical-align: left;
+  box-sizing: border-box;
+  padding: 50px;
+  max-width: 320px;
 }
 
 label {
@@ -20,8 +40,9 @@ label {
   font-weight: 600;
 }
 
-button {
+.button {
   justify-content: flex-end;
+  padding:15px 24px ;
 }
 
 .Login-title {
@@ -37,5 +58,5 @@ button {
   to { transform: rotate(360deg); }
 }
   
-  
+
   
