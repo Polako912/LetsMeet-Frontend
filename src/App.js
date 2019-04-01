@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
 import Routes from "./containers/Routes";
 import { LinkContainer } from "react-router-bootstrap";
-import { Nav, Navbar, NavItem, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Nav, Navbar, NavItem, NavLink,Collapse, NavbarBrand, NavbarToggler } from "reactstrap";
 
 class App extends Component {
   constructor(props)
@@ -25,22 +24,24 @@ class App extends Component {
       userHasAuthenticated: this.userHasAuthenticated
     };
     return (
-      <div className="App container">
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Collapse>
-          <Nav pullLeft>
-          <NavItem href="/login">Home</NavItem>
-          </Nav>
-          <Nav pullRight>
-            <NavItem href="/signup">Sign Up</NavItem>
+      <div >
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/login">Home</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink to href='/login'>Login</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to href='/signup'>Sign up</NavLink>
+              </NavItem>
+
             </Nav>
-            <Nav pullRight>
-            <NavItem href="/login">Login</NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <Routes />
-    </div>
+          </Collapse>
+        </Navbar>
+        <Routes/>
+      </div>
     );
   }
 }
