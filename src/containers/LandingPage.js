@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import "./LandingPage.css";
 
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SearchField from "react-search-field";
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 
 export default class LandingPage extends Component {
+  constructor(){
+    super();
+  }
       state = {
       sideNavLeft: false,
       sideNavRight: false
@@ -22,11 +26,13 @@ export default class LandingPage extends Component {
   
   render() {
       return (
+        <React.Fragment>
         <SideNav
         onSelect={(selected) => {
             // Add your code here
         }}
     >
+        
         <SideNav.Toggle />
         <SideNav.Nav defaultSelected="home">
             <NavItem eventKey="home">
@@ -57,7 +63,14 @@ export default class LandingPage extends Component {
             </NavItem>
         </SideNav.Nav>
     </SideNav>
+    
+    <SearchField>
+      placeholder="Search..."
+      className="searchButton"
+    </SearchField>
+    </React.Fragment>
       );
+
     }
   }
   
