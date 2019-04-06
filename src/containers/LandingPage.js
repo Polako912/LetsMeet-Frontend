@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-const mdbreact = require('mdbreact'); 
-const {  MDBSideNavCat, MDBSideNavNav, MDBSideNav, MDBSideNavLink, MDBContainer, MDBIcon, MDBBtn }  = mdbreact;
 
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+
+// Be sure to include styles at some point, probably during your bootstraping
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 
 export default class LandingPage extends Component {
@@ -20,45 +22,41 @@ export default class LandingPage extends Component {
   
   render() {
       return (
-          <MDBContainer>
-            <MDBBtn onClick={this.sidenavToggle("Left")}>
-              <MDBIcon size="lg" icon="bars" />
-            </MDBBtn>
-            <MDBSideNav slim fixed mask="rgba-blue-strong" triggerOpening={this.state.sideNavLeft} breakWidth={1300}
-              className="sn-bg-1">
-              <li>
-                <div className="logo-wrapper sn-ad-avatar-wrapper">
-                  <a href="#!">
-                    <img alt="" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" className="rounded-circle" />
-                    <span>Anna Deynah</span>
-                  </a>
-                </div>
-              </li>
-  
-              <MDBSideNavNav>
-                <MDBSideNavLink to="/other-page" topLevel>
-                  <MDBIcon icon="pencil-alt" className="mr-2" />Submit listing</MDBSideNavLink>
-                <MDBSideNavCat name="Submit blog" id="submit-blog" icon="chevron-right">
-                  <MDBSideNavLink>Submit listing</MDBSideNavLink>
-                  <MDBSideNavLink>Registration form</MDBSideNavLink>
-                </MDBSideNavCat>
-                <MDBSideNavCat name="Instruction" id="instruction" icon="hand-pointer" href="#">
-                  <MDBSideNavLink>For bloggers</MDBSideNavLink>
-                  <MDBSideNavLink>For authors</MDBSideNavLink>
-                </MDBSideNavCat>
-                <MDBSideNavCat name="About" id="about" icon="eye">
-                  <MDBSideNavLink>Instruction</MDBSideNavLink>
-                  <MDBSideNavLink>Monthly meetings</MDBSideNavLink>
-                </MDBSideNavCat>
-                <MDBSideNavCat name="Contact me" id="contact-me" icon="envelope">
-                  <MDBSideNavLink>FAQ</MDBSideNavLink>
-                  <MDBSideNavLink>Write a message</MDBSideNavLink>
-                </MDBSideNavCat>
-              </MDBSideNavNav>
-            </MDBSideNav>
-          </MDBContainer>
-         
- 
+        <SideNav
+        onSelect={(selected) => {
+            // Add your code here
+        }}
+    >
+        <SideNav.Toggle />
+        <SideNav.Nav defaultSelected="home">
+            <NavItem eventKey="home">
+                <NavIcon>
+                    <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                </NavIcon>
+                <NavText>
+                    Home
+                </NavText>
+            </NavItem>
+            <NavItem eventKey="charts">
+                <NavIcon>
+                    <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                </NavIcon>
+                <NavText>
+                    Charts
+                </NavText>
+                <NavItem eventKey="charts/linechart">
+                    <NavText>
+                        Line Chart
+                    </NavText>
+                </NavItem>
+                <NavItem eventKey="charts/barchart">
+                    <NavText>
+                        Bar Chart
+                    </NavText>
+                </NavItem>
+            </NavItem>
+        </SideNav.Nav>
+    </SideNav>
       );
     }
   }
