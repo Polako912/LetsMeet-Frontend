@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Login.css";
 import { Auth } from "aws-amplify";
 import {Breadcrumb} from 'react-bootstrap/lib/Breadcrumb'
-import { Button , ButtonGroup, Label, FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
+import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
 
 export default class Login extends Component {
   constructor(props) {
@@ -56,7 +56,7 @@ export default class Login extends Component {
         <form onSubmit={this.handleSubmit}>
         <Col>
           <FormGroup controlId="email" bsSize="large">
-            <Label>Email</Label>
+         
             <Input
               type="email"
               name="email"
@@ -81,7 +81,7 @@ export default class Login extends Component {
         </Col>
         <Col>
           <FormGroup controlId="password" bsSize="large">
-            <Label>Password</Label>
+           
             <Input
               type="password"
             
@@ -98,11 +98,11 @@ export default class Login extends Component {
             Forgot password?
           </Button>
           </ButtonGroup>
-          <Button color="link" size="sm">
+          <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
           
-          <Button color="primary" size="lg">Login</Button>
+          <Button to href='/home'>Login</Button>
             
         </form>
         </Form>

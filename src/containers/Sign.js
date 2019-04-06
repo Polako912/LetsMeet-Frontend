@@ -12,6 +12,8 @@ export default class Sign extends Component
         this.state =
         {
             email: "",
+            lastName: "",
+            firstName: "",
             nick: "",
             password: "",
             confirmPassword: "",
@@ -87,15 +89,17 @@ export default class Sign extends Component
             <Input
              autoFocus
              type="firstName"
+             name="firstName"
              placeholder="First name"
              value={this.state.firstName}
-             onChange={this.handleChange}
+             onChange={ (e) => {this.handleChange(e)}}
              />
             </FormGroup>
             <FormGroup controlId="last name" bsSize="large">
             <Input
              autoFocus
              type="lastName"
+             name="lastName"
              placeholder="Last name"
              value={this.state.lastName}
              onChange={this.handleChange}
@@ -104,6 +108,7 @@ export default class Sign extends Component
             <Input
              autoFocus
              type="nick"
+             name="nick"
              placeholder="Nick"
              value={this.state.nick}
              onChange={this.handleChange}
@@ -113,6 +118,7 @@ export default class Sign extends Component
             <Input
              autoFocus
              type="password"
+             name="password"
              placeholder="Password"
              value={this.state.password}
              onChange={this.handleChange}
@@ -122,12 +128,13 @@ export default class Sign extends Component
             <Input
              autoFocus
              type="password"
+             name="confirmPassword"
              placeholder="Password"
              value={this.state.confirmPassword}
              onChange={this.handleChange}
              />
             </FormGroup>
-            <Button color="primary" >
+            <Button to href='/home' color="primary" >
             Submit
           </Button>
           </FormGroup>
