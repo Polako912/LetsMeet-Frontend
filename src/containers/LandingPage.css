@@ -1,7 +1,4 @@
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-
 
 .LandingPage SearchField {
     width: 100%;
@@ -9,6 +6,7 @@
   }
   
   .searchTerm {
+    position: center;
     float: left;
     width: 100%;
     border: 3px solid #00B4CC;
@@ -44,4 +42,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .button {
+    justify-content: flex-end;
+    padding:15px 24px ;
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-
+import { Button, FormGroup, Input, Form, Container, Label, FormFeedback, ListGroup, ListGroupItem, Row, Col} from 'reactstrap';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import SearchField from "react-search-field";
 
@@ -40,7 +40,7 @@ export default class LandingPage extends Component {
                     <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                 </NavIcon>
                 <NavText>
-                    Home
+                      Profile
                 </NavText>
             </NavItem>
             <NavItem eventKey="charts">
@@ -48,18 +48,8 @@ export default class LandingPage extends Component {
                     <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
                 </NavIcon>
                 <NavText>
-                    Charts
+                    Settings
                 </NavText>
-                <NavItem eventKey="charts/linechart">
-                    <NavText>
-                        Line Chart
-                    </NavText>
-                </NavItem>
-                <NavItem eventKey="charts/barchart">
-                    <NavText>
-                        Bar Chart
-                    </NavText>
-                </NavItem>
             </NavItem>
         </SideNav.Nav>
     </SideNav>
@@ -68,7 +58,38 @@ export default class LandingPage extends Component {
       placeholder="Search..."
       className="searchButton"
     </SearchField>
+    
+    <Button>
+        Create Event
+    </Button>
+    <ListGroup>
+        <ListGroupItem>
+            <Container>
+            <ListGroupItem>
+              <Row>
+                <Col>
+                    Event Pic
+                </Col>
+                </Row>
+                </ListGroupItem>
+                <ListGroupItem>
+                <Row>
+                  <Col>
+                    People Attending
+                  </Col>
+                  <Col>
+                    Localization
+                  </Col>
+                  <Col>
+                    Time
+                  </Col>
+                  </Row>
+                  </ListGroupItem>
+            </Container>
+        </ListGroupItem>
+    </ListGroup>
     </React.Fragment>
+    
       );
 
     }
