@@ -22,6 +22,7 @@
   box-sizing: border-box;
   padding: 50px;
   max-width: 320px;
+  background-color: #DB3D44;
 }
 
 .button {
@@ -39,6 +40,9 @@
   font-size: large;
 }
 
+#loginBtn {
+  margin-top: 10px;
+}
 @keyframes Login-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

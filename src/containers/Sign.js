@@ -55,6 +55,27 @@ export default class Sign extends Component
     submitForm(e) {
       e.preventDefault();
       console.log(`Email: ${ this.state.email }`)
+      fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: this.state.email,
+          password: this.state.password,
+          confirmPassword: this.state.confirmPassword,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName
+        })
+        
+      })
+      console.log(this.state.email);
+      console.log(this.state.password);
+      console.log(this.state.confirmPassword);
+      console.log(this.state.firstName);
+      console.log(this.state.lastName);
+
     }
   
     render()
@@ -85,6 +106,16 @@ export default class Sign extends Component
              Uh oh! Looks like there is an issue with your email. Please input a correct email.
            </FormFeedback>
             </FormGroup>
+            <FormGroup controlId="username" bsSize="large">
+            <Input
+             autoFocus
+             type="username"
+             name="username"
+             placeholder="Username"
+             value={this.state.username}
+             onChange={this.handleChange}
+             />
+            </FormGroup>
             <FormGroup controlId="first name" bsSize="large">
             <Input
              autoFocus
@@ -104,15 +135,6 @@ export default class Sign extends Component
              value={this.state.lastName}
              onChange={this.handleChange}
              />
-            <FormGroup controlId="nick" bsSize="large">
-            <Input
-             autoFocus
-             type="nick"
-             name="nick"
-             placeholder="Nick"
-             value={this.state.nick}
-             onChange={this.handleChange}
-             />
             </FormGroup>
             <FormGroup controlId="password" bsSize="large">
             <Input
@@ -129,15 +151,14 @@ export default class Sign extends Component
              autoFocus
              type="password"
              name="confirmPassword"
-             placeholder="Password"
+             placeholder="Confirm"
              value={this.state.confirmPassword}
              onChange={this.handleChange}
              />
             </FormGroup>
-            <Button to href='/home' color="primary" >
+            <Button onClick={this.submitForm} to href='#' color="primary" >
             Submit
           </Button>
-          </FormGroup>
             </Form>
            </Container>
         );

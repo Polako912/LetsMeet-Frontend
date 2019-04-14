@@ -94,15 +94,15 @@ export default class Login extends Component {
           </FormGroup>
           </Col>
           <ButtonGroup  aria-label="Basic example">
-          <Button color="link" size="sm">
+          <Button color="#000000" size="sm">
             Forgot password?
           </Button>
           </ButtonGroup>
-          <Button to href='/signup' color="link" size="sm">
+          <Button to href='/signup' color="#000000" size="sm">
             Don't have account?
           </Button>
           
-          <Button to href='/home'>Login</Button>
+          <Button id="loginBtn" to href='/home'>Login</Button>
             
         </form>
         </Form>
