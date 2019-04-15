@@ -10,16 +10,13 @@ export default class Login extends Component {
     this.state = {
       'email': '',
       'password': '',
+      "users": [],
       validate: {
         emailState: '',
       },
     }
       this.handleChange = this.handleChange.bind(this);
   }
-
-
-  
-  
    
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
