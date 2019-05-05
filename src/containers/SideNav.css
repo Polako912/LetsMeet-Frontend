@@ -1,0 +1,39 @@
+
+.avi-wrapper{
+    position: relative;
+  }
+  .avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+  }
+  .avi-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 201px;
+    width: 201px;
+  background: #360033;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: border-spin infinite 10s linear;
+  }
+  .nav-wrapper{
+    position: absolute;
+    top: 205px;
+  }
+  .initial{
+    font-family: Times serif;
+    font-size: 50px;
+    height: 50px;
+  }
+  .name{
+    font-family: Times serif;
+    font-size: 36px;
+  }
+  @keyframes border-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
