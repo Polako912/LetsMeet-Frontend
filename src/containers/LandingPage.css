@@ -46,6 +46,7 @@
 
   .button {
     justify-content: flex-end;
+    position: absolute;
     padding:15px 24px ;
   }
   
