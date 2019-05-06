@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-import { Button, FormGroup, Input, Form, Container, Label, FormFeedback, ListGroup, ListGroupItem, Row, Col} from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, Button, FormGroup, Input, Form, Container, Label, FormFeedback, ListGroup, ListGroupItem, Row, Col} from 'reactstrap';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import SearchField from "react-search-field";
+import Avatar from 'react-avatar';
 import PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
 import avi from './download.png';
@@ -21,10 +22,23 @@ const EventList = (props) => (
   </div>
 );
 
+
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+
+    
+  }
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
   }
   clickHandler(evt) {
     evt.preventDefault();
@@ -38,13 +52,22 @@ class NavBar extends React.Component {
             {this.props.title}
           </div>
           <div className="collapse navbar-collapse">
-            <form className="navbar-form navbar-left">
+            <form className="navbar-form navbar-center" style={{marginTop:12}}>
               <div className="form-group">
-                <input type="text" ref="searchBox" className="form-control" placeholder={this.props.hint} />
-                <button className="btn btn-info" onClick={this.clickHandler}>{this.props.buttonTxt}</button>
-                <button className="btn btn-event" onClick={this.clickHandler}>{this.props.buttonTxt1}</button>
-              </div>
+                 <form>
+                <input type="text" ref="searchBox" className="form-control" placeholder={this.props.hint} style={{width:500 }} />
+                <Button className="btn btn-info" onClick={this.clickHandler}>{this.props.buttonTxt}</Button>
+                <Button className="btn btn-event" onClick={this.clickHandler} style={{  marginRight:100}}>{this.props.buttonTxt1} </Button>
+                <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret ></DropdownToggle>
+                <DropdownMenu right></DropdownMenu>
+                </Dropdown>
+                <Avatar style={{marginLeft: 200}} size="30" facebook-id="invalidfacebookusername" round={true} src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"   />
+                
+                </form>
+               </div>
             </form>
+
           </div>
         </div>
       </nav>
