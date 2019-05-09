@@ -1,14 +1,13 @@
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-
 
 .LandingPage SearchField {
     width: 100%;
-    position: relative
+    position: relative;
+    background-color: #6351b6
   }
   
   .searchTerm {
+    position: center;
     float: left;
     width: 100%;
     border: 3px solid #00B4CC;
@@ -45,3 +44,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .button {
+    justify-content: flex-end;
+    position: absolute;
+    padding:15px 24px ;
+  }
+  
