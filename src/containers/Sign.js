@@ -55,6 +55,27 @@ export default class Sign extends Component
     submitForm(e) {
       e.preventDefault();
       console.log(`Email: ${ this.state.email }`)
+      console.log(`Email: ${ this.state.email }`)
+      fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: this.state.email,
+          password: this.state.password,
+          confirmPassword: this.state.confirmPassword,
+          firstName: this.state.firstName,
+          lastName: this.state.lastName
+        })
+        
+      })
+      console.log(this.state.email);
+      console.log(this.state.password);
+      console.log(this.state.confirmPassword);
+      console.log(this.state.firstName);
+      console.log(this.state.lastName);
     }
   
     render()
