@@ -2,7 +2,8 @@
 
 .LandingPage SearchField {
     width: 100%;
-    position: relative
+    position: relative;
+    background-color: #6351b6
   }
   
   .searchTerm {
