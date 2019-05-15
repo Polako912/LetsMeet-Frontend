@@ -4,23 +4,28 @@ import { Auth } from "aws-amplify";
 import {Breadcrumb} from 'react-bootstrap/lib/Breadcrumb'
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
 
+
+
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       'email': '',
       'password': '',
-      "users": [],
+      //"users": [],
       validate: {
         emailState: '',
       },
-    }
+    };
       this.handleChange = this.handleChange.bind(this);
+      this.submitForm = this.submitForm.bind(this);
   }
    
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const { validate } = this.state
+    const { validate } = this.state;
       if (emailRex.test(e.target.value)) {
         validate.emailState = 'has-success'
       } else {
@@ -36,11 +41,31 @@ export default class Login extends Component {
       await this.setState({
         [ name ]: value,
       });
-    }
-  
-    submitForm(e) {
-      e.preventDefault();
-      console.log(`Email: ${ this.state.email }`)
+    };
+
+
+
+    submitForm() {
+      //e.preventDefault();
+      console.log(`Email: ${ this.state.email }`);
+      var http = new XMLHttpRequest();
+      var url = 'https://letsmeet.azurewebsites.net/api';
+      var dane = JSON.stringify(
+        {
+          "email": this.state.email,
+          "password": this.state.password
+        }
+      );
+      http.open("POST", url+'/login', true);
+      http.setRequestHeader("Content-Type", "application/json");
+      http.onreadysetchange = function()
+      {
+        if(http.readyState == 4 && http.status == 200)
+        {
+          alert(http.responseText);
+        }
+      };
+      http.send(dane);
     }
   
 
@@ -63,7 +88,7 @@ export default class Login extends Component {
               valid={ this.state.validate.emailState === 'has-success' }
               invalid={ this.state.validate.emailState === 'has-danger' }
               onChange={ (e) => {
-                this.validateEmail(e)
+                this.validateEmail(e);
                 this.handleChange(e)
               } }
             />
@@ -99,7 +124,7 @@ export default class Login extends Component {
             Don't have account?
           </Button>
           
-          <Button to href='/home'>Login</Button>
+          <Button onClick={this.submitForm}>Login</Button>
             
         </form>
         </Form>
