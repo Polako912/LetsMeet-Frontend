@@ -27,6 +27,7 @@ class Event extends React.Component {
     super(props);
 
     this.state = {
+      events : [],
       fetchEvent: {
         'name': '',
         'date': '',
@@ -34,16 +35,15 @@ class Event extends React.Component {
         'size': '',
       }
     }
-    this.fetchEvent = this.fetchEvent.bind(this);
+
   }
 
-  fetchEvent() {
+  componentDidMount() {
     axios.get('https://letsmeet.azurewebsites.net/api/meetings')
       .then((response) => {
         console.log("response", response);
-        this.setState({
-          fetchUser: response.data
-        });
+        const events = response.data;
+        this.setState({events});
         console.log("fetchEvent", this.state.fetchEvent);
       })
       .catch((error) => {
@@ -52,31 +52,31 @@ class Event extends React.Component {
   }
 
   render() {
-    const event = this.props;
+    //const event = this.props;
     return (
+
       <ListGroup>
-        <Button onClick={this.fetchEvent} color="primary">
-          Fetch
-        </Button>
         <ListGroupItem>
           <Container>
             <ListGroupItem>
               <Row>
                 <Col>
-                  {this.state.fetchEvent.name}
+                  <ul>
+                    {this.state.events.map(event =><li> {event.name} </li>)}
+                  </ul>
                 </Col>
               </Row>
             </ListGroupItem>
             <ListGroupItem>
               <Row>
                 <Col>
-                  {this.state.fetchEvent.date}
+                  {this.state.events.map(events => {events.date})}
                 </Col>
                 <Col>
-                  {this.state.fetchEvent.place}
+                  {this.state.events.map(events => {events.place})}
                 </Col>
                 <Col>
-                  {this.state.fetchEvent.size}
+                  {this.state.events.map(events => {events.size})}
                 </Col>
               </Row>
             </ListGroupItem>

@@ -56,6 +56,7 @@ export default class Sign extends Component {
     console.log(`Email: ${this.state.email}`)
     var http = new XMLHttpRequest();
     var url = 'https://letsmeet.azurewebsites.net/api';
+    //var url = 'https://localhost:44315//api'
     var dane = JSON.stringify(
       {
         "email": this.state.email,
