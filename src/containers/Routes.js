@@ -4,6 +4,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Sign from "./Sign";
 import LandingPage from "./LandingPage";
+import CreateEvent from "./CreateEvent";
 
 export default () =>
   <Switch>
@@ -11,4 +12,5 @@ export default () =>
     <Route path="/login" exact component={Login} />
     <Route path="/signup" exact component={Sign} />
     <Route path="/home" exact component={LandingPage} />
+    <Route path="/createevent" exact component={CreateEvent} />
   </Switch>;
