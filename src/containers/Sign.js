@@ -7,30 +7,22 @@ export default class Sign extends Component {
   constructor(props) {
     super(props);
 
-    this.state =
-      {
-        email: "",
-        lastName: "",
-        firstName: "",
-        age: "",
-        password: "",
-        city: "",
-        validate: {
-          emailState: '',
-        },
-      };
-    this.handleChange = this.handleChange.bind(this);
-    this.submitForm = this.submitForm.bind(this);
-
-  }
-
-
-  /* validateForm()
-   {
-       return this.state.email.length > 0 && this.state.nick.length > 0 &&
-       this.state.password.length > 0 && this.state.confirmPassword.length > 0
-   }*/
-
+        this.state =
+        {
+          email: "",
+          lastName: "",
+          firstName: "",
+          age: "",
+          password: "",
+          city: "",
+          validate: {
+            emailState: '',
+          },
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.submitForm = this.submitForm.bind(this);
+    }
+    
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const {validate} = this.state
@@ -41,7 +33,7 @@ export default class Sign extends Component {
     }
     this.setState({validate})
   }
-
+    
   handleChange = async (event) => {
     const {target} = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -52,10 +44,8 @@ export default class Sign extends Component {
   }
 
   submitForm() {
-    //e.preventDefault();
-    console.log(`Email: ${this.state.email}`)
     var http = new XMLHttpRequest();
-    var url = 'https://letsmeet.azurewebsites.net/api';
+    var url = 'https://letsmeet.azurewebsites.net/api/users';
     var dane = JSON.stringify(
       {
         "email": this.state.email,
@@ -68,43 +58,18 @@ export default class Sign extends Component {
     );
     http.open("POST", url + '/register', true);
     http.setRequestHeader("Content-Type", "application/json");
+
     http.onreadysetchange = function () {
       if (http.readyState == 4 && http.status == 200) {
         alert(http.responseText);
       }
     };
     http.send(dane);
-    // fetch('https://letsmeet.azurewebsites.net/api/users/register', {
-    //   method: 'POST',
-    //   headers: {
-    //     "Accept": "application/json",
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Origin": "*",
-    //     "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
-    //     "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
-    //   },
-    //   body: JSON.stringify({
-    //     "email": this.state.email,
-    //     "password": this.state.password,
-    //     "city": this.state.city,
-    //     "age": this.state.age,
-    //     "firstName": this.state.firstName,
-    //     "lastName": this.state.lastName
-    //   })
-    //
-    // }).then(res => res.json())
-    //   .then(response => console.log('Success:', JSON.stringify(response)))
-    //   .catch(error => console.error('Error:', error));
-    console.log(this.state.email);
-    console.log(this.state.password);
-    console.log(this.state.firstName);
-    console.log(this.state.lastName);
   }
 
   render() {
     return (
       <Container className="Sign">
-
         <Form onSubmit={this.handleChange}>
           <h2> Sign up</h2>
           <FormGroup controlId="email" bsSize="large">
@@ -179,6 +144,7 @@ export default class Sign extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
+            <Button href="/home" onClick={this.submitForm} color="primary">
             <Button onClick={this.submitForm} color="primary">
               Submit
             </Button>

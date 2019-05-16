@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./Login.css";
-import { Auth } from "aws-amplify";
-import {Breadcrumb} from 'react-bootstrap/lib/Breadcrumb'
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
 
 
@@ -14,7 +12,6 @@ export default class Login extends Component {
     this.state = {
       'email': '',
       'password': '',
-      //"users": [],
       validate: {
         emailState: '',
       },
@@ -24,7 +21,10 @@ export default class Login extends Component {
   }
    
   validateEmail(e) {
-    const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    let emailRex;
+    emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     const { validate } = this.state;
       if (emailRex.test(e.target.value)) {
         validate.emailState = 'has-success'
@@ -43,42 +43,34 @@ export default class Login extends Component {
       });
     };
 
-
-
-    submitForm() {
-      //e.preventDefault();
-      console.log(`Email: ${ this.state.email }`);
-      var http = new XMLHttpRequest();
-      var url = 'https://letsmeet.azurewebsites.net/api';
-      var dane = JSON.stringify(
-        {
-          "email": this.state.email,
-          "password": this.state.password
-        }
-      );
-      http.open("POST", url+'/login', true);
-      http.setRequestHeader("Content-Type", "application/json");
-      http.onreadysetchange = function()
+  submitForm() {
+    console.log(`Email: ${this.state.email}`);
+    var http = new XMLHttpRequest();
+    var url = 'https://letsmeet.azurewebsites.net/api/users';
+    var dane = JSON.stringify(
       {
-        if(http.readyState == 4 && http.status == 200)
-        {
-          alert(http.responseText);
-        }
-      };
-      http.send(dane);
-    }
+        "email": this.state.email,
+        "password": this.state.password
+      }
+    );
+    http.open("POST", url + '/login', true);
+    http.setRequestHeader("Content-Type", "application/json");
+    http.onreadysetchange = function () {
+      if (http.readyState === 4 && http.status === 200) {
+        alert(http.responseText);
+      }
+    };
+    http.send(dane);
+  }
   
-
   render() {
     return (
       <Container className="Login">
       <h2>Sign In</h2>
       <Form className="form"  onSubmit={ (e) => this.submitForm(e)} >
-        
         <form onSubmit={this.handleSubmit}>
         <Col>
           <FormGroup controlId="email" bsSize="large">
-         
             <Input
               type="email"
               name="email"
@@ -98,15 +90,12 @@ export default class Login extends Component {
             <FormFeedback invalid>
               Uh oh! Looks like there is an issue with your email. Please input a correct email.
             </FormFeedback>
-
           </FormGroup>
         </Col>
         <Col>
           <FormGroup controlId="password" bsSize="large">
-           
             <Input
               type="password"
-            
               name="password"
               id="examplePassword"
               placeholder="Password"
@@ -123,14 +112,11 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          
+          <Button to href='/home'>Login</Button>
           <Button onClick={this.submitForm}>Login</Button>
-            
         </form>
         </Form>
       </Container>
     );
   }
-
-
 }
