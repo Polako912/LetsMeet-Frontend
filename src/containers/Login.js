@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import "./Login.css";
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
 
+
+
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       'email': '',
       'password': '',
@@ -17,8 +21,10 @@ export default class Login extends Component {
   }
    
   validateEmail(e) {
+
     let emailRex;
     emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     const { validate } = this.state;
       if (emailRex.test(e.target.value)) {
         validate.emailState = 'has-success'
@@ -74,7 +80,7 @@ export default class Login extends Component {
               valid={ this.state.validate.emailState === 'has-success' }
               invalid={ this.state.validate.emailState === 'has-danger' }
               onChange={ (e) => {
-                this.validateEmail(e)
+                this.validateEmail(e);
                 this.handleChange(e)
               } }
             />
@@ -107,6 +113,7 @@ export default class Login extends Component {
             Don't have account?
           </Button>
           <Button to href='/home'>Login</Button>
+          <Button onClick={this.submitForm}>Login</Button>
         </form>
         </Form>
       </Container>

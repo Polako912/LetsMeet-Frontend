@@ -1,13 +1,11 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 import "./Sign.css";
-import { Button, FormGroup, Input, Form, Container, Label, FormFeedback} from 'reactstrap';
+import {Button, FormGroup, Input, Form, Container, Label, FormFeedback} from 'reactstrap';
 
-export default class Sign extends Component
-{
-    constructor(props)
-    {
-        super(props);
+export default class Sign extends Component {
+  constructor(props) {
+    super(props);
 
         this.state =
         {
@@ -27,23 +25,23 @@ export default class Sign extends Component
     
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const { validate } = this.state
-      if (emailRex.test(e.target.value)) {
-        validate.emailState = 'has-success'
-      } else {
-        validate.emailState = 'has-danger'
-      }
-      this.setState({ validate })
+    const {validate} = this.state
+    if (emailRex.test(e.target.value)) {
+      validate.emailState = 'has-success'
+    } else {
+      validate.emailState = 'has-danger'
     }
-
-    handleChange = async (event) => {
-      const { target } = event;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const { name } = target;
-      await this.setState({
-        [ name ]: value,
-      });
-    }
+    this.setState({validate})
+  }
+    
+  handleChange = async (event) => {
+    const {target} = event;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const {name} = target;
+    await this.setState({
+      [name]: value,
+    });
+  }
 
   submitForm() {
     var http = new XMLHttpRequest();
@@ -59,7 +57,6 @@ export default class Sign extends Component
       }
     );
     http.open("POST", url + '/register', true);
-
     http.setRequestHeader("Content-Type", "application/json");
 
     http.onreadysetchange = function () {
@@ -148,6 +145,7 @@ export default class Sign extends Component
               />
             </FormGroup>
             <Button href="/home" onClick={this.submitForm} color="primary">
+            <Button onClick={this.submitForm} color="primary">
               Submit
             </Button>
           </FormGroup>
