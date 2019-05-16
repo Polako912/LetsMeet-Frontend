@@ -78,4 +78,7 @@ export default class LandingPage extends Component {
       <React.Fragment>
         <NavbarPage></NavbarPage>
         <Event></Event>
-        </React.Fragment>
+      </React.Fragment>
+    )
+  }
+}
