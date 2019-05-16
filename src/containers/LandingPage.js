@@ -65,18 +65,17 @@ class Event extends React.Component {
     );
   }
 }
+
+
 export default class LandingPage extends Component {
-  constructor(){
+  constructor() {
     super();
   }
 
   render() {
-      const post = this.props;
-      return (
-        <React.Fragment>
+    const post = this.props;
+    return (
+      <React.Fragment>
         <NavbarPage></NavbarPage>
         <Event></Event>
         </React.Fragment>
-      );
-    }
-  }
