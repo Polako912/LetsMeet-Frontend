@@ -5,13 +5,8 @@ import { Input } from "@material-ui/core";
 import Autocomplete from "./Autocomplete.js";
 
 export default class CreateEvent extends React.Component{
-
-
     render(){
         return(
-        
-
-       
          <Container className = "CreateEvent">
          <NavbarPage></NavbarPage>
             <h1>Create Event</h1>
