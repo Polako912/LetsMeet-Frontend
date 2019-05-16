@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b94a322-1970-4952-ad7d-28d445c77138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/NavbarPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CreateEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CreateEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LandingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/NavbarPage" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/NavbarPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NavbarPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -136,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -180,6 +171,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last.edited.regexp" value="" />
@@ -235,16 +227,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558005061027</updated>
-      <workItem from="1558005064761" duration="4424000" />
+      <workItem from="1558005064761" duration="4478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4424000" />
+    <option name="totallyTimeSpent" value="4478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
@@ -257,7 +248,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
