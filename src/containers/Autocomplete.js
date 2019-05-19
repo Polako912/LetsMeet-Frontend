@@ -3,6 +3,7 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+import {Input} from 'reactstrap'; 
 
 export default class Autocomplete extends React.Component {
   constructor(props) {
@@ -30,8 +31,9 @@ export default class Autocomplete extends React.Component {
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
-            <input
+            <Input
               {...getInputProps({
+                type: "text",
                 placeholder: 'Search Places ...',
                 className: 'location-search-input',
               })}

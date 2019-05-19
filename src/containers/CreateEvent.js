@@ -10,7 +10,7 @@ export default class CreateEvent extends React.Component{
          <Container className = "CreateEvent">
          <NavbarPage></NavbarPage>
             <h1>Create Event</h1>
-         <Form className="form">
+         <Form className="form" >
             <Col>
                 <FormGroup>
                     <Label>Event title</Label>
@@ -26,7 +26,13 @@ export default class CreateEvent extends React.Component{
             <Col>
                 <FormGroup>
                     <Label>Location</Label>
-                    <Autocomplete />
+                    <Input
+                        type="text"
+                        name="location"
+                        id="locationId"
+                        placeholder="xDemon"
+                        />
+                    
                 </FormGroup>
             </Col>
             <Col>
@@ -50,24 +56,53 @@ export default class CreateEvent extends React.Component{
             </Col>
             <Col>
             <FormGroup>
-            <Label>Ends</Label>
+            <Label>Description</Label>
                     <Input
-                        type="data"
-                        name="endDate"
-                        id="endDate"
-                        placeholder="dd-mm-yyyy"
+                        type="text"
+                        name="descryption"
+                        id="descriptionID"
+                        placeholder="Description"
                         />
-                     <Input
-                        type="time"
-                        name="endTime"
-                        id="endTime"
-                        placeholder="13:00"
-                        min="00:00"
-                        max="24:00"
-                     />
                 </FormGroup>
             </Col>
+            <Col>
+            <FormGroup>
+                <Label>Host</Label> 
+                <Input
+                        type="text"
+                        name="host"
+                        id="hostID"
+                        placeholder="eg. Jan Kowalski"
+                        />
+            </FormGroup>
+            </Col>
+            <Col>
+            <FormGroup>
+                <Label>Amount of people</Label>
+                <Input
+                        type="number"
+                        min="0"
+                        max="500"
+                        name="numbOfPeople"
+                        id="numbOfPeopleID"
+                        placeholder="20"
+                        />
+            </FormGroup>
+            </Col>
+            <Col>
+            <FormGroup>
+                <Label>Payment method</Label>
+                <Input
+                        type="text"
+                        name="paymentType"
+                        id="paymentID"
+                        placeholder="PayPal"
+                        />
+            </FormGroup>
+            </Col>
+            <Col>
             <Button>Create</Button>
+            </Col>
          </Form>
         </Container>
         ) 
