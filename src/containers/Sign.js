@@ -148,6 +148,7 @@ export default class Sign extends Component {
             <Button onClick={this.submitForm} color="primary">
               Submit
             </Button>
+            </Button>
           </FormGroup>
         </Form>
       </Container>
