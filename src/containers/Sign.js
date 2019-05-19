@@ -145,7 +145,6 @@ export default class Sign extends Component {
               />
             </FormGroup>
             <Button href="/home" onClick={this.submitForm} color="primary">
-            <Button onClick={this.submitForm} color="primary">
               Submit
             </Button>
           </FormGroup>

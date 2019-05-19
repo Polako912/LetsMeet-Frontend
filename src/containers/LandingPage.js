@@ -66,7 +66,6 @@ class Event extends React.Component {
   }
 }
 
-
 export default class LandingPage extends Component {
   constructor() {
     super();
@@ -78,4 +77,6 @@ export default class LandingPage extends Component {
       <React.Fragment>
         <NavbarPage></NavbarPage>
         <Event></Event>
-        </React.Fragment>
+      </React.Fragment>
+  )}
+}
