@@ -148,7 +148,7 @@ export default class Sign extends Component {
            
               Submit
             </Button>
-            </Button>
+          
           </FormGroup>
         </Form>
       </Container>
