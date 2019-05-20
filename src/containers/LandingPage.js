@@ -1,15 +1,17 @@
 import "./LandingPage.css";
-import NavbarPage from"./NavbarPage.js"
-import { Button, Container, ListGroup, ListGroupItem, Row, Col} from 'reactstrap';
-import React, { Component } from "react";
+import NavbarPage from "./NavbarPage.js"
+import {Button, Container, ListGroup, ListGroupItem, Row, Col} from 'reactstrap';
+import React, {Component} from "react";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import axios from 'axios';
+import ReactTable from 'react-table';
+import EventList from "./EventList";
 
 class Event extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events : [],
+      events: [],
       fetchEvent: {
         'name': '',
         'date': '',
@@ -41,7 +43,7 @@ class Event extends React.Component {
               <Row>
                 <Col>
                   <ul>
-                    {this.state.events.map(event =><li> {event.name} </li>)}
+                    {this.state.events.map(event => <li> {event.name} </li>)}
                   </ul>
                 </Col>
               </Row>
@@ -49,13 +51,19 @@ class Event extends React.Component {
             <ListGroupItem>
               <Row>
                 <Col>
-                  {this.state.events.map(events => {events.date})}
+                  {this.state.events.map(events => <li>{
+                    events.date
+                  }</li>)}
                 </Col>
                 <Col>
-                  {this.state.events.map(events => {events.place})}
+                  {this.state.events.map(events => <li>{
+                    events.place
+                  }</li>)}
                 </Col>
                 <Col>
-                  {this.state.events.map(events => {events.size})}
+                  {this.state.events.map(events => <li>{
+                    events.size
+                  }</li>)}
                 </Col>
               </Row>
             </ListGroupItem>
@@ -77,8 +85,9 @@ export default class LandingPage extends Component {
     return (
       <React.Fragment>
         <NavbarPage></NavbarPage>
-        <Event></Event>
-        </React.Fragment>
+
+        <EventList />
+      </React.Fragment>
 
     )
   }
