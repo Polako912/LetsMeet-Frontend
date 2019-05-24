@@ -17,6 +17,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import {Button} from 'react-bootstrap';
+import Auth from './Auth.js';
 
 const styles = theme => ({
   root: {
@@ -127,7 +128,7 @@ class NavbarPage extends React.Component {
       >
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>Log out</MenuItem>
+        <MenuItem onClick={this.handleMenuClose} to href='/'>Log out</MenuItem>
 
       </Menu>
     );

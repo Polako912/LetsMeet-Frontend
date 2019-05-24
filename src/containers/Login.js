@@ -3,8 +3,6 @@ import "./Login.css";
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
 import Auth from "./Auth.js";
 
-
-
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +50,6 @@ export default class Login extends Component {
       }
     );
     //console.log(`Email: ${this.state.email}`);
-    var http = new XMLHttpRequest();
     var url = 'https://letsmeet.azurewebsites.net/api/users/login';
     const requestOptions = {
       method: 'POST',
@@ -75,10 +72,14 @@ export default class Login extends Component {
       })
     .then(function(data) {
       console.log(data);
+      var obj = data;
+      var almostToken = JSON.stringify(obj.token);
+      var goodToken = almostToken.replace(/['"]+/g, '');
+      Auth.authenticateUser(goodToken);
       //var token = data.token;
-      const obj = data.Object;
+     /* const obj = data.Object;
       this.setState({obj});
-      Auth.authenticateUser(this.state.obj.map(obj =>{obj.token}));
+      Auth.authenticateUser(this.state.obj.map(obj =>{obj.token}));*/
     });
     /*http.open("POST", url + '/login', true);
     http.setRequestHeader("Content-Type", "application/json");
@@ -143,7 +144,7 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          <Button onClick={this.submitForm} to href='/home'>Login</Button>
+          <Button onClick={this.submitForm}>Login</Button>
         </form>
         </Form>
       </Container>
