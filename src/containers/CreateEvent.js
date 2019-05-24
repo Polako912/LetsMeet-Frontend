@@ -78,9 +78,11 @@ export default class CreateEvent extends React.Component{
             </Col>
             <Col>
             <FormGroup>
-                <Label>Amound of people</Label> 
+                <Label>Amount of people</Label>
                 <Input
                         type="number"
+                        min="0"
+                        max="500"
                         name="numbOfPeople"
                         id="numbOfPeopleID"
                         placeholder="20"
@@ -89,7 +91,7 @@ export default class CreateEvent extends React.Component{
             </Col>
             <Col>
             <FormGroup>
-                <Label>Payment type</Label> 
+                <Label>Payment method</Label>
                 <Input
                         type="text"
                         name="paymentType"

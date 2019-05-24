@@ -1,84 +1,89 @@
-import "./LandingPage.css";
-import NavbarPage from"./NavbarPage.js"
-import { Button, Container, ListGroup, ListGroupItem, Row, Col} from 'reactstrap';
-import React, { Component } from "react";
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import './LandingPage.css'
+import NavbarPage from './NavbarPage.js'
+import {
+  Button,
+  Container,
+  ListGroup,
+  ListGroupItem,
+  Table,
+  Col,
+} from 'reactstrap'
+import React, { Component } from 'react'
+import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import axios from 'axios';
+import Auth from "./Auth.js";
+
+const Row = ({ name, date, place }) =>
+  <tr>
+    <td>{name}</td>
+    <td>{date}</td>
+    <td>{place}</td>
+  </tr>
 
 class Event extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      events : [],
+      events: [],
       fetchEvent: {
         'name': '',
         'date': '',
         'place': '',
         'size': '',
-      }
+      },
     }
   }
 
-  componentDidMount() {
-    axios.get('https://letsmeet.azurewebsites.net/api/meetings')
-      .then((response) => {
-        console.log("response", response);
-        const events = response.data;
-        this.setState({events});
-        console.log("fetchEvent", this.state.fetchEvent);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+  componentDidMount () {
+    const requestOptions =
+    axios.get('https://letsmeet.azurewebsites.net/api/meetings', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${Auth.getToken()}`,
+        }
+    })
+    .then((response) => {
+      console.log("response", response);
+      const events = response.data;
+      this.setState({events});
+      console.log("fetchEvent", this.state.fetchEvent);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    }
 
-  render() {
+  render () {
+    const { events } = this.state
     return (
-      <ListGroup>
-        <ListGroupItem>
-          <Container>
-            <ListGroupItem>
-              <Row>
-                <Col>
-                  <ul>
-                    {this.state.events.map(event =><li> {event.name} </li>)}
-                  </ul>
-                </Col>
-              </Row>
-            </ListGroupItem>
-            <ListGroupItem>
-              <Row>
-                <Col>
-                  {this.state.events.map(events => {events.date})}
-                </Col>
-                <Col>
-                  {this.state.events.map(events => {events.place})}
-                </Col>
-                <Col>
-                  {this.state.events.map(events => {events.size})}
-                </Col>
-              </Row>
-            </ListGroupItem>
-          </Container>
-        </ListGroupItem>
-      </ListGroup>
-    );
+      <Table striped>>
+        <thead>
+        <tr>
+          <th>Event title</th>
+          <th>Date</th>
+          <th>Place</th>
+        </tr>
+        </thead>
+        <tbody>
+        {events.map(Row)}
+        </tbody>
+      </Table>
+    )
   }
 }
 
-
 export default class LandingPage extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  render() {
-    const post = this.props;
+  render () {
+
     return (
       <React.Fragment>
         <NavbarPage></NavbarPage>
         <Event></Event>
-        </React.Fragment>
+      </React.Fragment>
 
     )
   }

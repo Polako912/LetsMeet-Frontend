@@ -10,6 +10,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "jquery": "^1.9.1",
+    "jwt-decode": "^2.2.0",
     "mdbreact": "^4.13.0",
     "peer": "^0.2.10",
     "prop-types": "^15.7.2",

@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-
+import axios from 'axios';
 import "./Sign.css";
 import {Button, FormGroup, Input, Form, Container, Label, FormFeedback} from 'reactstrap';
+import Auth from "./Auth.js";
 
 export default class Sign extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class Sign extends Component {
 
         this.state =
         {
+          errors: {},
           email: "",
           lastName: "",
           firstName: "",
@@ -20,9 +22,9 @@ export default class Sign extends Component {
           },
         };
         this.handleChange = this.handleChange.bind(this);
-        this.submitForm = this.submitForm.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
-    
+
   validateEmail(e) {
     const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const {validate} = this.state
@@ -33,7 +35,7 @@ export default class Sign extends Component {
     }
     this.setState({validate})
   }
-    
+
   handleChange = async (event) => {
     const {target} = event;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -43,7 +45,30 @@ export default class Sign extends Component {
     });
   }
 
-  submitForm() {
+
+/*onSubmit = (event) => {
+  event.preventDefault();
+  const dane = {
+    email: this.state.email,
+    password: this.state.password,
+    firstname: this.state.firstName,
+    lastname: this.state.lastName,
+    age: this.state.age,
+    city: this.state.city
+  };
+  let config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  axios.post('https://letsmeet.azurewebsites.net/api/users/register', {dane}, config)
+  .then(res => {
+    console.log(res);
+    console.log(res.data);
+  })
+}*/
+
+  onSubmit() {
     var http = new XMLHttpRequest();
     var url = 'https://letsmeet.azurewebsites.net/api/users';
     var dane = JSON.stringify(
@@ -58,12 +83,24 @@ export default class Sign extends Component {
     );
     http.open("POST", url + '/register', true);
     http.setRequestHeader("Content-Type", "application/json");
+    http.addEventListener('load', () => {
+      if (http.status === 200) {
+        this.setState({
+          errors: {}
+        });
 
-    http.onreadysetchange = function () {
-      if (http.readyState == 4 && http.status == 200) {
-        alert(http.responseText);
+        Auth.authenticateUser(http.response.token);
+
+      } else {
+
+        const errors = http.response.errors ? http.response.errors : {};
+        errors.summary = http.response.message;
+
+        this.setState({
+          errors
+        });
       }
-    };
+    });
     http.send(dane);
   }
 
@@ -144,10 +181,8 @@ export default class Sign extends Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
-            <Button href="/home" onClick={this.submitForm} color="primary">
-           
+            <Button  onClick={this.onSubmit} color="primary">
               Submit
-            </Button>
             </Button>
           </FormGroup>
         </Form>
