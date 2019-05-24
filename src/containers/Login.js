@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
-
+import Auth from "./Auth.js";
 
 
 
@@ -12,6 +12,7 @@ export default class Login extends Component {
     this.state = {
       'email': '',
       'password': '',
+      'obj': '',
       validate: {
         emailState: '',
       },
@@ -44,30 +45,60 @@ export default class Login extends Component {
     };
 
   submitForm() {
-    console.log(`Email: ${this.state.email}`);
-    var http = new XMLHttpRequest();
-    var url = 'https://letsmeet.azurewebsites.net/api/users';
     var dane = JSON.stringify(
       {
         "email": this.state.email,
         "password": this.state.password
       }
     );
-    http.open("POST", url + '/login', true);
+    //console.log(`Email: ${this.state.email}`);
+    var http = new XMLHttpRequest();
+    var url = 'https://letsmeet.azurewebsites.net/api/users/login';
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(
+        {
+          "email": this.state.email,
+          "password": this.state.password
+        }),
+    };
+    return fetch(url, requestOptions)
+      .then(function(response) {
+        return response.json();
+        //res.authdata = window.btoa(this.state.email + ':' + this.state.password);
+        //localStorage.setItem('token', this.state.token);
+
+        //Auth.authenticateUser(JSON.stringify(this.state.token));
+        //console.log(this.state.token);
+    //return this.state.token;
+      })
+    .then(function(data) {
+      console.log(data);
+      //var token = data.token;
+      const obj = data.Object;
+      this.setState({obj});
+      Auth.authenticateUser(this.state.obj.map(obj =>{obj.token}));
+    });
+    /*http.open("POST", url + '/login', true);
     http.setRequestHeader("Content-Type", "application/json");
     http.onreadysetchange = function () {
       if (http.readyState === 4 && http.status === 200) {
-        alert(http.responseText);
-      }
-    };
-    http.send(dane);
+        alert(http.responseText).then(res => res.json()).then(res => {
+          let token = res.token;
+          console.log("token: ", token);
+          Auth.authenticateUser(token);
+        });
+      };
+    }
+  http.send(dane);*/
   }
   
   render() {
     return (
       <Container className="Login">
       <h2>Sign In</h2>
-      <Form className="form"  onSubmit={ (e) => this.submitForm(e)} >
+      <Form className="form">
         <form onSubmit={this.handleSubmit}>
         <Col>
           <FormGroup controlId="email" bsSize="large">
@@ -112,7 +143,7 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          <Button to href='/home' onClick={this.submitForm}>Login</Button>
+          <Button onClick={this.submitForm} >Login</Button>
         </form>
         </Form>
       </Container>
