@@ -143,7 +143,7 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          <Button onClick={this.submitForm} >Login</Button>
+          <Button onClick={this.submitForm} to href='/home'>Login</Button>
         </form>
         </Form>
       </Container>
