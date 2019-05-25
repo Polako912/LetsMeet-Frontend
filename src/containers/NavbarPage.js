@@ -1,63 +1,3 @@
-// import React, { Component } from "react";
-// import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
-// MDBDropdownToggle, MDBFormInline, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-// import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-//
-// export default class NavbarPage extends React.Component {
-//   state = {
-//     isOpen: false
-//   };
-//
-//   toggleCollapse = () => {
-//     this.setState({ isOpen: !this.state.isOpen });
-//   };
-//
-//   render() {
-//     return (
-//       <MDBNavbar  style={{color:'blue'}}  dark expand="md">
-//         <MDBNavbarBrand>
-//           <strong className="black-text" style={{color: 'black'}}>Let's Meet</strong>
-//         </MDBNavbarBrand>
-//         <MDBNavbarToggler onClick={this.toggleCollapse} />
-//         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-//         <MDBNavbarNav left>
-//         <MDBNavItem>
-//           <MDBNavItem active>
-//               <MDBFormInline waves>
-//                 <div className="md-form my-0">
-//                   <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-//                 </div>
-//                 <MDBNavItem active>
-//                 <MDBNavLink to="/createevent" style={{color: 'black'}}>Create</MDBNavLink>
-//                 </MDBNavItem>
-//               </MDBFormInline>
-//           </MDBNavItem>
-//         </MDBNavItem>
-//         </MDBNavbarNav>
-//           <MDBNavbarNav right>
-//             <MDBNavItem>
-//               <MDBNavLink className="waves-effect waves-light" to="#!" style={{color: 'black'}}>
-//                 <MDBIcon fab icon="google-plus-g" />
-//               </MDBNavLink>
-//             </MDBNavItem>
-//             <MDBNavItem>
-//               <MDBDropdown>
-//                 <MDBDropdownToggle nav caret style={{color: 'black'}}>
-//                   <MDBIcon icon="user" style={{color: 'black'}}/>
-//                 </MDBDropdownToggle>
-//                 <MDBDropdownMenu className="dropdown-default" right>
-//                   <MDBDropdownItem href="#!">Profile</MDBDropdownItem>
-//                   <MDBDropdownItem href="#!">Settings</MDBDropdownItem>
-//                   <MDBDropdownItem href="#!">Log out</MDBDropdownItem>
-//                 </MDBDropdownMenu>
-//               </MDBDropdown>
-//             </MDBNavItem>
-//           </MDBNavbarNav>
-//         </MDBCollapse>
-//       </MDBNavbar>
-//       );
-//     }
-//   }
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -77,6 +17,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import {Button} from 'react-bootstrap';
+import Auth from './Auth.js';
 
 const styles = theme => ({
   root: {
@@ -154,6 +95,11 @@ class NavbarPage extends React.Component {
     mobileMoreAnchorEl: null,
   };
 
+  handleLogOut = () => {
+    Auth.deauthenticateUser();
+    window.location.href = 'http://localhost:3000';
+}
+
   handleProfileMenuOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -187,7 +133,7 @@ class NavbarPage extends React.Component {
       >
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>Log out</MenuItem>
+        <MenuItem onClick={this.handleLogOut}>Log out</MenuItem>
 
       </Menu>
     );
