@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
-import Auth from "./Auth.js";
+import Auth from "../services/Auth.js";
 import  { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {

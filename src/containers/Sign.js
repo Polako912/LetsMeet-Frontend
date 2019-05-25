@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import axios from 'axios';
 import "./Sign.css";
 import {Button, FormGroup, Input, Form, Container, Label, FormFeedback} from 'reactstrap';
-import Auth from "./Auth.js";
+import Auth from "../services/Auth.js";
 
 export default class Sign extends Component {
   constructor(props) {

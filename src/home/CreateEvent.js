@@ -1,9 +1,8 @@
-import NavbarPage from"./NavbarPage.js"
+import NavbarPage from "./NavbarPage.js"
 import React, { Component } from "react";
 import {Container, Col, Form, FormGroup, Label, Imput, Button} from 'reactstrap';
 import { Input } from "@material-ui/core";
-import Autocomplete from "./Autocomplete.js";
-import Auth from "./Auth.js";
+import Auth from "../services/Auth.js";
 
 export default class CreateEvent extends React.Component {
   constructor(props) {

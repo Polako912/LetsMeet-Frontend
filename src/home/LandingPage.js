@@ -1,5 +1,5 @@
-import './LandingPage.css'
-import NavbarPage from './NavbarPage.js'
+import '../home/LandingPage.css'
+import NavbarPage from '../home/NavbarPage.js'
 import {
   Button,
   Container,
@@ -11,7 +11,7 @@ import {
 import React, { Component } from 'react'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import axios from 'axios';
-import Auth from "./Auth.js";
+import Auth from "../services/Auth.js";
 
 const Row = ({ name, date, place }) =>
   <tr>
