@@ -72,8 +72,7 @@ export default class Login extends Component {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify(
-        {
+      body: JSON.stringify({
           "email": this.state.email,
           "password": this.state.password
         }),
