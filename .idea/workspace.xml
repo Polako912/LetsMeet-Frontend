@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b94a322-1970-4952-ad7d-28d445c77138" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LandingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/NavbarPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NavbarPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +61,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Auth.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="27" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -110,11 +107,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+                <state relative-caret-position="255">
+                  <caret line="95" column="58" lean-forward="true" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="58" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -122,11 +119,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/NavbarPage.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
+                <state relative-caret-position="255">
+                  <caret line="135" column="44" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -150,6 +147,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/containers/Sign.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/containers/NavbarPage.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/containers/Auth.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/containers/Login.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/containers/LandingPage.js" root0="SKIP_INSPECTION" />
@@ -167,8 +165,8 @@
         <option value="$PROJECT_DIR$/src/containers/Sign.js" />
         <option value="$PROJECT_DIR$/src/containers/Auth.js" />
         <option value="$PROJECT_DIR$/src/containers/LandingPage.js" />
-        <option value="$PROJECT_DIR$/src/containers/NavbarPage.js" />
         <option value="$PROJECT_DIR$/src/containers/Login.js" />
+        <option value="$PROJECT_DIR$/src/containers/NavbarPage.js" />
       </list>
     </option>
   </component>
@@ -256,12 +254,12 @@
       <workItem from="1558633420674" duration="1264000" />
       <workItem from="1558634816459" duration="15335000" />
       <workItem from="1558696858563" duration="17865000" />
-      <workItem from="1558786731199" duration="4523000" />
+      <workItem from="1558786731199" duration="4895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40983000" />
+    <option name="totallyTimeSpent" value="41355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -414,29 +412,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/NavbarPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="130" column="48" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+        <state relative-caret-position="408">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+        <state relative-caret-position="255">
+          <caret line="95" column="58" lean-forward="true" selection-start-line="95" selection-start-column="6" selection-end-line="95" selection-end-column="58" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/NavbarPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="135" column="44" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

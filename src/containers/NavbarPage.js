@@ -95,6 +95,11 @@ class NavbarPage extends React.Component {
     mobileMoreAnchorEl: null,
   };
 
+  handleLogOut = () => {
+    Auth.deauthenticateUser();
+    window.location.href = 'http://localhost:3000';
+}
+
   handleProfileMenuOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -128,7 +133,7 @@ class NavbarPage extends React.Component {
       >
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>Log out</MenuItem>
+        <MenuItem onClick={this.handleLogOut}>Log out</MenuItem>
 
       </Menu>
     );
