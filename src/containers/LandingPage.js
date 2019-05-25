@@ -56,7 +56,7 @@ class Event extends React.Component {
   render () {
     const { events } = this.state
     return (
-      <Table striped>>
+      <Table striped>
         <thead>
         <tr>
           <th>Event title</th>

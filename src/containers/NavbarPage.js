@@ -128,7 +128,7 @@ class NavbarPage extends React.Component {
       >
         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
         <MenuItem onClick={this.handleMenuClose}>Settings</MenuItem>
-        <MenuItem onClick={this.handleMenuClose} to href='/'>Log out</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>Log out</MenuItem>
 
       </Menu>
     );

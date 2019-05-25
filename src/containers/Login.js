@@ -2,23 +2,35 @@ import React, { Component } from "react";
 import "./Login.css";
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
 import Auth from "./Auth.js";
+import  { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      'email': '',
-      'password': '',
+      'email': "",
+      'password': "",
       'obj': '',
       validate: {
         emailState: '',
       },
     };
+      this.validateForm = this.validateForm.bind(this);
       this.handleChange = this.handleChange.bind(this);
       this.submitForm = this.submitForm.bind(this);
+      this.handleResponse = this.handleResponse.bind(this);
   }
-   
+
+  validateForm() {
+    if (this.state.username.length === 0 && this.state.password.length === 0)
+      return false;
+    else {
+      return true;
+    }
+  }
+
+
   validateEmail(e) {
 
     let emailRex;
@@ -42,14 +54,20 @@ export default class Login extends Component {
       });
     };
 
-  submitForm() {
-    var dane = JSON.stringify(
-      {
-        "email": this.state.email,
-        "password": this.state.password
+  handleResponse(response) {
+    console.log('handling response');
+    return response.text().then(text => {
+      const data = JSON.stringify(text);
+      if (!response.ok) {
+        if (response.status === 404) {
+          alert('Failed to login');
+        }
       }
-    );
-    //console.log(`Email: ${this.state.email}`);
+      return data;
+    });
+  }
+
+  submitForm() {
     var url = 'https://letsmeet.azurewebsites.net/api/users/login';
     const requestOptions = {
       method: 'POST',
@@ -62,37 +80,21 @@ export default class Login extends Component {
     };
     return fetch(url, requestOptions)
       .then(function(response) {
-        return response.json();
-        //res.authdata = window.btoa(this.state.email + ':' + this.state.password);
-        //localStorage.setItem('token', this.state.token);
-
-        //Auth.authenticateUser(JSON.stringify(this.state.token));
-        //console.log(this.state.token);
-    //return this.state.token;
-      })
+        if(response.status === 200 && response.ok) {
+          return response.json();
+        }
+        else {
+          alert("Failed to login");
+        }
+    })
     .then(function(data) {
       console.log(data);
       var obj = data;
       var almostToken = JSON.stringify(obj.token);
       var goodToken = almostToken.replace(/['"]+/g, '');
       Auth.authenticateUser(goodToken);
-      //var token = data.token;
-     /* const obj = data.Object;
-      this.setState({obj});
-      Auth.authenticateUser(this.state.obj.map(obj =>{obj.token}));*/
-    });
-    /*http.open("POST", url + '/login', true);
-    http.setRequestHeader("Content-Type", "application/json");
-    http.onreadysetchange = function () {
-      if (http.readyState === 4 && http.status === 200) {
-        alert(http.responseText).then(res => res.json()).then(res => {
-          let token = res.token;
-          console.log("token: ", token);
-          Auth.authenticateUser(token);
-        });
-      };
-    }
-  http.send(dane);*/
+      window.location.href = 'http://localhost:3000/home';
+    })
   }
   
   render() {
@@ -100,7 +102,7 @@ export default class Login extends Component {
       <Container className="Login">
       <h2>Sign In</h2>
       <Form className="form">
-        <form onSubmit={this.handleSubmit}>
+        <form>
         <Col>
           <FormGroup controlId="email" bsSize="large">
             <Input
@@ -144,7 +146,9 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          <Button onClick={this.submitForm}>Login</Button>
+          <Button disabled={!this.validateForm} onClick={this.submitForm}>
+            Login
+          </Button>
         </form>
         </Form>
       </Container>
