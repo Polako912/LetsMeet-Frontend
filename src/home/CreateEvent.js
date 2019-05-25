@@ -1,10 +1,58 @@
-import NavbarPage from"./NavbarPage.js"
+import NavbarPage from "./NavbarPage.js"
 import React, { Component } from "react";
 import {Container, Col, Form, FormGroup, Label, Imput, Button} from 'reactstrap';
 import { Input } from "@material-ui/core";
-import Autocomplete from "./Autocomplete.js";
+import Auth from "../services/Auth.js";
 
-export default class CreateEvent extends React.Component{
+export default class CreateEvent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      'eventTitle': "",
+      'location': "",
+      'startDate': "",
+      'startTime': "",
+      'description': "",
+      'host': "",
+      'numbOfPeople': "",
+      'paymentType': "",
+    };
+
+    this.submitEvent = this.submitEvent.bind(this);
+  }
+
+  submitEvent(){
+    var url = 'https://letsmeet.azurewebsites.net/api/meetings';
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${Auth.getToken()}`,
+      },
+      body: JSON.stringify({
+          "name": this.state.eventTitle,
+          "date": this.state.startDate+"T"+this.state.startTime,
+          "place": this.state.location,
+          "size": this.state.numbOfPeople,
+          "paymentMethod": this.state.paymentType,
+          "description": this.state.description
+        }),
+    };
+    return fetch(url, requestOptions)
+    .then(function(response) {
+      if(response.status === 200 && response.ok) {
+        return response.json();
+      }
+      else {
+        alert("Failed to create event");
+      }
+    })
+    .then(function(data) {
+      console.log(data);
+      window.location.href = 'http://localhost:3000/home';
+    })
+  }
     render(){
         return(
          <Container className = "CreateEvent">
@@ -15,8 +63,8 @@ export default class CreateEvent extends React.Component{
                 <FormGroup>
                     <Label>Event title</Label>
                     <Input
-                        type="text"
-                        name="event title"
+                        type="eventTitle"
+                        name="eventTitle"
                         id="eventTitle"
                         placeholder="eg. Orange Warsaw Festival"
                         required="true"
@@ -27,7 +75,7 @@ export default class CreateEvent extends React.Component{
                 <FormGroup>
                     <Label>Location</Label>
                     <Input
-                        type="text"
+                        type="location"
                         name="location"
                         id="locationId"
                         placeholder="xDemon"
@@ -39,13 +87,13 @@ export default class CreateEvent extends React.Component{
                 <FormGroup>
                     <Label>Starts</Label>
                     <Input
-                        type="data"
+                        type="startDate"
                         name="startDate"
                         id="startDate"
                         placeholder="dd-mm-yyyy"
                         />
                      <Input
-                        type="time"
+                        type="startTime"
                         name="startTime"
                         id="startTime"
                         placeholder="13:00"
@@ -58,8 +106,8 @@ export default class CreateEvent extends React.Component{
             <FormGroup>
             <Label>Description</Label>
                     <Input
-                        type="text"
-                        name="descryption"
+                        type="description"
+                        name="description"
                         id="descriptionID"
                         placeholder="Description"
                         />
@@ -69,7 +117,7 @@ export default class CreateEvent extends React.Component{
             <FormGroup>
                 <Label>Host</Label> 
                 <Input
-                        type="text"
+                        type="host"
                         name="host"
                         id="hostID"
                         placeholder="eg. Jan Kowalski"
@@ -93,7 +141,7 @@ export default class CreateEvent extends React.Component{
             <FormGroup>
                 <Label>Payment method</Label>
                 <Input
-                        type="text"
+                        type="paymentType"
                         name="paymentType"
                         id="paymentID"
                         placeholder="PayPal"
@@ -101,7 +149,9 @@ export default class CreateEvent extends React.Component{
             </FormGroup>
             </Col>
             <Col>
-            <Button>Create</Button>
+            <Button onClick={this.submitEvent}>
+              Create
+            </Button>
             </Col>
          </Form>
         </Container>

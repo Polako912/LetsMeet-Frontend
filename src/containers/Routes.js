@@ -1,10 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./Home";
 import Login from "./Login";
 import Sign from "./Sign";
-import LandingPage from "./LandingPage";
-import CreateEvent from "./CreateEvent";
+import LandingPage from "../home/LandingPage";
+import CreateEvent from "../home/CreateEvent";
 
 export default () =>
   <Switch>
