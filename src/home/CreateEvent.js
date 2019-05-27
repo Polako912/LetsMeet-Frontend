@@ -46,7 +46,7 @@ export default class CreateEvent extends React.Component {
       },
       body: JSON.stringify({
           "name": this.state.eventTitle,
-          "date": this.date,
+          "date": this.state.startDate + 'T' + this.state.startTime,
           "place": this.state.location,
           "size": this.state.numbOfPeople,
           "paymentMethod": this.state.paymentType,
@@ -111,7 +111,7 @@ export default class CreateEvent extends React.Component {
                         type="startDate"
                         name="startDate"
                         id="startDate"
-                        placeholder="dd-mm-yyyy"
+                        placeholder="yyyy-mm-dd"
                         value={this.state.startDate}
                         onChange={this.handleChange}
                     />
@@ -139,19 +139,6 @@ export default class CreateEvent extends React.Component {
                         onChange={this.handleChange}
                     />
                 </FormGroup>
-            </Col>
-            <Col>
-            <FormGroup>
-                <Label>Host</Label> 
-                <Input
-                        type="host"
-                        name="host"
-                        id="hostID"
-                        placeholder="eg. Jan Kowalski"
-                        value={this.state.host}
-                        onChange={this.handleChange}
-                />
-            </FormGroup>
             </Col>
             <Col>
             <FormGroup>
