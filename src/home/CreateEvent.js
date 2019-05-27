@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import {Container, Col, Form, FormGroup, Label, Imput, Button} from 'reactstrap';
 import { Input } from "@material-ui/core";
 import Auth from "../services/Auth.js";
+import DateTime from "react-transition-group";
 
 export default class CreateEvent extends React.Component {
   constructor(props) {
@@ -17,9 +18,22 @@ export default class CreateEvent extends React.Component {
       'host': "",
       'numbOfPeople': "",
       'paymentType': "",
+      'fullDate': "",
     };
 
+    var date = new Date(this.state.startDate + 'T' + this.state.startTime);
+
+    this.handleChange = this.handleChange.bind(this);
     this.submitEvent = this.submitEvent.bind(this);
+  }
+
+  handleChange = async (event) => {
+    const {target} = event;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const {name} = target;
+    await this.setState({
+      [name]: value,
+    });
   }
 
   submitEvent(){
@@ -32,16 +46,18 @@ export default class CreateEvent extends React.Component {
       },
       body: JSON.stringify({
           "name": this.state.eventTitle,
-          "date": this.state.startDate+"T"+this.state.startTime,
+          "date": this.state.startDate + 'T' + this.state.startTime,
           "place": this.state.location,
           "size": this.state.numbOfPeople,
           "paymentMethod": this.state.paymentType,
-          "description": this.state.description
+          "description": this.state.description,
+          "Bearer": `${Auth.getToken()}`,
+          "OwnerId": "testid",
         }),
     };
     return fetch(url, requestOptions)
     .then(function(response) {
-      if(response.status === 200 && response.ok) {
+      if(response.status === 201 && response.ok) {
         return response.json();
       }
       else {
@@ -52,6 +68,8 @@ export default class CreateEvent extends React.Component {
       console.log(data);
       window.location.href = 'http://localhost:3000/home';
     })
+    console.log(this.state.startDate)
+    console.log(this.state.startTime)
   }
     render(){
         return(
@@ -68,6 +86,8 @@ export default class CreateEvent extends React.Component {
                         id="eventTitle"
                         placeholder="eg. Orange Warsaw Festival"
                         required="true"
+                        value={this.state.eventTitle}
+                        onChange={this.handleChange}
                     />
                 </FormGroup>
             </Col>
@@ -79,8 +99,9 @@ export default class CreateEvent extends React.Component {
                         name="location"
                         id="locationId"
                         placeholder="xDemon"
-                        />
-                    
+                        value={this.state.location}
+                        onChange={this.handleChange}
+                    />
                 </FormGroup>
             </Col>
             <Col>
@@ -90,8 +111,10 @@ export default class CreateEvent extends React.Component {
                         type="startDate"
                         name="startDate"
                         id="startDate"
-                        placeholder="dd-mm-yyyy"
-                        />
+                        placeholder="yyyy-mm-dd"
+                        value={this.state.startDate}
+                        onChange={this.handleChange}
+                    />
                      <Input
                         type="startTime"
                         name="startTime"
@@ -99,6 +122,8 @@ export default class CreateEvent extends React.Component {
                         placeholder="13:00"
                         min="00:00"
                         max="24:00"
+                        value={this.state.startTime}
+                        onChange={this.handleChange}
                      />
                 </FormGroup>
             </Col>
@@ -110,19 +135,10 @@ export default class CreateEvent extends React.Component {
                         name="description"
                         id="descriptionID"
                         placeholder="Description"
-                        />
+                        value={this.state.description}
+                        onChange={this.handleChange}
+                    />
                 </FormGroup>
-            </Col>
-            <Col>
-            <FormGroup>
-                <Label>Host</Label> 
-                <Input
-                        type="host"
-                        name="host"
-                        id="hostID"
-                        placeholder="eg. Jan Kowalski"
-                        />
-            </FormGroup>
             </Col>
             <Col>
             <FormGroup>
@@ -130,11 +146,13 @@ export default class CreateEvent extends React.Component {
                 <Input
                         type="number"
                         min="0"
-                        max="500"
+                        max="300"
                         name="numbOfPeople"
                         id="numbOfPeopleID"
                         placeholder="20"
-                        />
+                        value={this.state.numbOfPeople}
+                        onChange={this.handleChange}
+                />
             </FormGroup>
             </Col>
             <Col>
@@ -145,7 +163,9 @@ export default class CreateEvent extends React.Component {
                         name="paymentType"
                         id="paymentID"
                         placeholder="PayPal"
-                        />
+                        value={this.state.paymentType}
+                        onChange={this.handleChange}
+                />
             </FormGroup>
             </Col>
             <Col>
