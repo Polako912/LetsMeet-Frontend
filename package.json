@@ -10,6 +10,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "jquery": "^1.9.1",
+    "jwt-decode": "^2.2.0",
     "mdbreact": "^4.13.0",
     "peer": "^0.2.10",
     "prop-types": "^15.7.2",
@@ -25,7 +26,9 @@
     "react-search-field": "^1.0.0",
     "reactstrap": "^7.1.0",
     "styled-components": "^4.2.0",
-    "typescript": "^3.4.2"
+    "typescript": "^3.4.2",
+    "axios": "latest",
+    "axios": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

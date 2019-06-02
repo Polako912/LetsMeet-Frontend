@@ -1,25 +1,35 @@
 import React, { Component } from "react";
 import "./Login.css";
 import { Button , ButtonGroup,FormGroup, Input, Col, Container, Form, FormFeedback} from 'reactstrap';
-
-
-
+import Auth from "../services/Auth.js";
+import  { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      'email': '',
-      'password': '',
+      'email': "",
+      'password': "",
+      'obj': '',
       validate: {
         emailState: '',
       },
     };
+      this.validateForm = this.validateForm.bind(this);
       this.handleChange = this.handleChange.bind(this);
       this.submitForm = this.submitForm.bind(this);
+      this.handleResponse = this.handleResponse.bind(this);
   }
-   
+
+  validateForm() {
+    if (this.state.username.length === 0 && this.state.password.length === 0)
+      return false;
+    else {
+      return true;
+    }
+  }
+
   validateEmail(e) {
 
     let emailRex;
@@ -43,32 +53,54 @@ export default class Login extends Component {
       });
     };
 
+  handleResponse(response) {
+    console.log('handling response');
+    return response.text().then(text => {
+      const data = JSON.stringify(text);
+      if (!response.ok) {
+        if (response.status === 404) {
+          alert('Failed to login');
+        }
+      }
+      return data;
+    });
+  }
+
   submitForm() {
-    console.log(`Email: ${this.state.email}`);
-    var http = new XMLHttpRequest();
-    var url = 'https://letsmeet.azurewebsites.net/api/users';
-    var dane = JSON.stringify(
-      {
-        "email": this.state.email,
-        "password": this.state.password
-      }
-    );
-    http.open("POST", url + '/login', true);
-    http.setRequestHeader("Content-Type", "application/json");
-    http.onreadysetchange = function () {
-      if (http.readyState === 4 && http.status === 200) {
-        alert(http.responseText);
-      }
+    var url = 'https://letsmeet.azurewebsites.net/api/users/login';
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+          "email": this.state.email,
+          "password": this.state.password
+        }),
     };
-    http.send(dane);
+    return fetch(url, requestOptions)
+      .then(function(response) {
+        if(response.status === 200 && response.ok) {
+          return response.json();
+        }
+        else {
+          alert("Failed to login");
+        }
+    })
+    .then(function(data) {
+      console.log(data);
+      var obj = data;
+      var almostToken = JSON.stringify(obj.token);
+      var goodToken = almostToken.replace(/['"]+/g, '');
+      Auth.authenticateUser(goodToken);
+      window.location.href = 'http://localhost:3000/home';
+    })
   }
   
   render() {
     return (
       <Container className="Login">
       <h2>Sign In</h2>
-      <Form className="form"  onSubmit={ (e) => this.submitForm(e)} >
-        <form onSubmit={this.handleSubmit}>
+      <Form className="form">
+        <form>
         <Col>
           <FormGroup controlId="email" bsSize="large">
             <Input
@@ -112,7 +144,9 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          <Button to href='/home' onClick={this.submitForm}>Login</Button>
+          <Button disabled={!this.validateForm} onClick={this.submitForm}>
+            Login
+          </Button>
         </form>
         </Form>
       </Container>
