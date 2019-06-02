@@ -52,13 +52,15 @@ const handleLeaveEvent = ({id}) => {
   })
 }
 
+
+
 const Row = ({ name, date, place, id }) =>
   <tr>
     <td>{name}</td>
     <td>{date}</td>
     <td>{place}</td>
     <td><Button onClick={ () => handleJoinEvent({id})}>Join</Button></td>
-    <td><Button noClick={ () => handleLeaveEvent({id})}>Leave</Button></td>
+    <td><Button onClick={ () => handleLeaveEvent({id})}>Leave</Button></td>
   </tr>
 
 class Event extends React.Component {
@@ -66,6 +68,7 @@ class Event extends React.Component {
     super(props)
     this.state = {
       events: [],
+      search: '',
       fetchEvent: {
         'name': '',
         'date': '',
@@ -73,8 +76,39 @@ class Event extends React.Component {
         'size': '',
       },
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
+  handleChange = async (event) => {
+    const { target } = event;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const { name } = target;
+    await this.setState({
+      [ name ]: value,
+    });
+  };
+
+  handleSearch = ({name}) => {
+    const requestOptions =
+      axios.get('https://letsmeet.azurewebsites.net/api/meetings?name=' + name,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${Auth.getToken()}`,
+          }
+        })
+
+      .then((response) => {
+        console.log("response", response);
+        const events = response.data;
+        this.setState({events});
+        console.log("fetchEvent", this.state.fetchEvent);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+  }
   componentDidMount () {
     const requestOptions =
     axios.get('https://letsmeet.azurewebsites.net/api/meetings', {
@@ -95,8 +129,22 @@ class Event extends React.Component {
     }
 
   render () {
-    const { events } = this.state
+    const { events } = this.state;
+    const { search } = this.state;
     return (
+      <div>
+        <input
+          type="text"
+          name="text"
+          placeholder="Search.."
+          value={this.state.search}
+          ref={node => this.search = node}
+          onChange={this.handleChange}
+        />
+        <Button onClick={() => this.handleSearch({search})}>
+          Search
+        </Button>
+
       <Table striped>
         <thead>
         <tr>
@@ -109,6 +157,7 @@ class Event extends React.Component {
         {events.map(Row)}
         </tbody>
       </Table>
+      </div>
     )
   }
 }
@@ -116,18 +165,19 @@ class Event extends React.Component {
 export default class LandingPage extends Component {
   constructor () {
     super()
+    this.state = {
+      search: '',
+    }
   }
-
+  updateSearch(event) {
+    this.setState({search: event.target.value.substr(0,20)})
+  };
   render () {
 
     return (
       <React.Fragment>
         <NavbarPage></NavbarPage>
-        <SearchField
-          placeholder="Search..."
-          searchText="This is initial search text"
-          classNames="test-class"
-        />
+
         <Event></Event>
       </React.Fragment>
 

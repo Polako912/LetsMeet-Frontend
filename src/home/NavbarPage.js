@@ -98,7 +98,7 @@ class NavbarPage extends React.Component {
   handleLogOut = () => {
     Auth.deauthenticateUser();
     window.location.href = 'http://localhost:3000';
-}
+  };
 
   handleProfileMenuOpen = event => {
     this.setState({ anchorEl: event.currentTarget });

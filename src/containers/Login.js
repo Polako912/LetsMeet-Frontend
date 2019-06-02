@@ -30,7 +30,6 @@ export default class Login extends Component {
     }
   }
 
-
   validateEmail(e) {
 
     let emailRex;
