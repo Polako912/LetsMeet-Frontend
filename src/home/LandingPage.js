@@ -15,33 +15,33 @@ import Auth from "../services/Auth.js";
 import SearchField from "react-search-field";
 
 const handleJoinEvent = ({id}) => {
-  const requestOptions =
-    axios.post('https://letsmeet.azurewebsites.net/api/meetings/' + id + '/join', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${Auth.getToken()}`,
-      }
-    })
-  return fetch('https://letsmeet.azurewebsites.net/api/meetings/' + id + '/join', requestOptions)
-  .then(function (response) {
-    if(response.ok) {
-      alert("Successfully joined event");
+  var url = 'https://letsmeet.azurewebsites.net/api/meetings/' + id + '/join';
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${Auth.getToken()}`,
     }
-    else {
+  };
+  return fetch(url, requestOptions).then(function (response) {
+    if (response.ok) {
+      alert("Successfully joined event");
+    } else {
       alert("You have already joined that event")
     }
   })
 }
 
 const handleLeaveEvent = ({id}) => {
-  const requestOptions =
-    axios.post('https://letsmeet.azurewebsites.net/api/meetings/' + id + '/leave', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${Auth.getToken()}`,
-      }
-    })
-  return fetch('https://letsmeet.azurewebsites.net/api/meetings/' + id + '/leave', requestOptions)
+  var url = 'https://letsmeet.azurewebsites.net/api/meetings/' + id + '/leave';
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${Auth.getToken()}`,
+    }
+  };
+  return fetch(url, requestOptions)
   .then(function (response) {
     if(response.ok) {
       alert("Successfully left event");
