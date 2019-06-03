@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="4b94a322-1970-4952-ad7d-28d445c77138" name="Default Changelist" comment="" />
+=======
     <list default="true" id="4b94a322-1970-4952-ad7d-28d445c77138" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/home/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/LandingPage.js" afterDir="false" />
     </list>
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,10 +18,34 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/home/CreateEvent.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#40#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/services/Auth.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="24" column="27" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+=======
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
+                <state relative-caret-position="375">
                   <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
@@ -29,7 +57,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Routes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="15">
                   <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
                 </state>
               </provider>
@@ -38,8 +66,13 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="165">
+                  <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+=======
                 <state relative-caret-position="1921">
                   <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
                 </state>
               </provider>
             </entry>
@@ -47,8 +80,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/home/LandingPage.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="45">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="39" />
+=======
                 <state relative-caret-position="323">
                   <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
                 </state>
               </provider>
             </entry>
@@ -60,8 +98,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="285">
+                  <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+=======
                 <state relative-caret-position="493">
                   <caret line="85" column="9" lean-forward="true" selection-start-line="78" selection-start-column="4" selection-end-line="85" selection-end-column="9" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -72,8 +115,13 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/containers/Sign.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="2115">
+                  <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+=======
                 <state relative-caret-position="-258">
                   <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -81,6 +129,39 @@
               </provider>
             </entry>
           </file>
+<<<<<<< HEAD
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/containers/LandingPage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1545">
+                  <caret line="103" selection-start-line="103" selection-end-line="103" />
+                  <folding>
+                    <element signature="e#0#27#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/containers/AccountCircle.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" selection-start-line="1" selection-end-line="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/home/LandingPage.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+=======
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
         </leaf>
       </split-second>
     </splitter>
@@ -96,9 +177,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
+    <setting file="file://$PROJECT_DIR$/src/services/Auth.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/containers/Login.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/home/NavbarPage.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/home/LandingPage.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/containers/Sign.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/home/CreateEvent.js" root0="SKIP_INSPECTION" />
+=======
     <setting file="file://$PROJECT_DIR$/src/containers/Sign.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/home/LandingPage.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/containers/Login.js" root0="SKIP_INSPECTION" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,6 +202,13 @@
         <option value="$PROJECT_DIR$/src/containers/Auth.js" />
         <option value="$PROJECT_DIR$/src/containers/CreateEvent.js" />
         <option value="$PROJECT_DIR$/src/containers/NavbarPage.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/containers/Sign.js" />
+        <option value="$PROJECT_DIR$/src/home/LandingPage.js" />
+        <option value="$PROJECT_DIR$/src/containers/Routes.js" />
+        <option value="$PROJECT_DIR$/src/home/CreateEvent.js" />
+        <option value="$PROJECT_DIR$/src/containers/LandingPage.js" />
+=======
         <option value="$PROJECT_DIR$/src/containers/LandingPage.js" />
         <option value="$PROJECT_DIR$/src/containers/Routes.js" />
         <option value="$PROJECT_DIR$/src/home/CreateEvent.js" />
@@ -119,14 +216,14 @@
         <option value="$PROJECT_DIR$/src/containers/Login.js" />
         <option value="$PROJECT_DIR$/src/containers/Sign.js" />
         <option value="$PROJECT_DIR$/src/home/LandingPage.js" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -140,16 +237,22 @@
           <expand>
             <path>
               <item name="LetsMeet-Frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\asus\Documents\Let's Meet\my-app\LetsMeet-Frontend\LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/web/LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
               <item name="LetsMeet-Frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\asus\Documents\Let's Meet\my-app\LetsMeet-Frontend\LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/web/LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="LetsMeet-Frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\asus\Documents\Let's Meet\my-app\LetsMeet-Frontend\LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="~/web/LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="containers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="LetsMeet-Frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/web/LetsMeet-Frontend" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="home" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
@@ -163,7 +266,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/package.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -215,24 +318,42 @@
       <workItem from="1558786731199" duration="10256000" />
       <workItem from="1558959329922" duration="3384000" />
       <workItem from="1558981897193" duration="1951000" />
+<<<<<<< HEAD
+      <workItem from="1558990307335" duration="620000" />
+      <workItem from="1559490184507" duration="898000" />
+=======
       <workItem from="1558990307335" duration="731000" />
       <workItem from="1559475811284" duration="20960000" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="53569000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14694202" />
+=======
     <option name="totallyTimeSpent" value="73742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14732143" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23211679" />
+=======
       <window_info anchor="bottom" id="Run" order="2" weight="0.23567921" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -240,33 +361,12 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="GraphQL" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23240589" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23211679" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14732143" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23240589" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="GraphQL" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.23240589" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -332,9 +432,16 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/Table.js" />
+    <entry file="file://$PROJECT_DIR$/src/services/Auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="375">
           <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -344,11 +451,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="15">
           <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="39" />
+=======
     <entry file="file://$PROJECT_DIR$/src/containers/AccountCircle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -360,19 +473,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="27" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/home/CreateEvent.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="285">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+=======
         <state relative-caret-position="659">
           <caret line="56" column="4" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/containers/AccountCircle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/home/LandingPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+=======
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -396,30 +528,54 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Sign.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2115">
+          <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+=======
         <state relative-caret-position="-258">
           <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/home/CreateEvent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/src/containers/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
           <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/home/LandingPage.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/LandingPage.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1545">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+=======
         <state relative-caret-position="323">
           <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+>>>>>>> c363a53a72dedf12d3f7bc033436e31ebdc2aebf
         </state>
       </provider>
     </entry>

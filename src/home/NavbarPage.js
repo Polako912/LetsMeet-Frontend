@@ -36,13 +36,7 @@ const styles = theme => ({
       display: 'block',
     },
   },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
+
     marginRight: theme.spacing.unit * 2,
     marginLeft: 0,
     width: '100%',
@@ -50,16 +44,6 @@ const styles = theme => ({
       marginLeft: theme.spacing.unit * 3,
       width: 'auto',
     },
-  },
-  searchIcon: {
-    width: theme.spacing.unit * 9,
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   inputRoot: {
     color: 'inherit',
     width: '100%',
@@ -178,24 +162,10 @@ class NavbarPage extends React.Component {
             <IconButton href="/home" className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              Let's Meet
-            </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-              />
-            </div>
+            <Typography className={classes.title} variant="h6" color="inherit" noWrap></Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Button href="/createevent">Create </Button>
+              {/*<Button href="/createevent">Create </Button>*/}
               <IconButton
                 aria-owns={isMenuOpen ? 'material-appbar' : undefined}
                 aria-haspopup="true"
