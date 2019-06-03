@@ -52,8 +52,6 @@ const handleLeaveEvent = ({id}) => {
   })
 }
 
-
-
 const Row = ({ name, date, place, id }) =>
   <tr>
     <td>{name}</td>
@@ -64,6 +62,7 @@ const Row = ({ name, date, place, id }) =>
   </tr>
 
 class Event extends React.Component {
+
   constructor (props) {
     super(props)
     this.state = {
@@ -139,21 +138,15 @@ class Event extends React.Component {
 
   render () {
     const { events } = this.state;
-    //const { search } = this.state;
     return (
       <div>
         <input
           type="text"
           name="text"
           placeholder="Search.."
-          //value={this.state.search}
           ref={node => this.search = node}
           onChange={this.onChange}
         />
-        <Button onClick={this.onChange}>
-          Search
-        </Button>
-
       <Table striped>
         <thead>
         <tr>
@@ -186,7 +179,6 @@ export default class LandingPage extends Component {
     return (
       <React.Fragment>
         <NavbarPage></NavbarPage>
-
         <Event></Event>
       </React.Fragment>
 
