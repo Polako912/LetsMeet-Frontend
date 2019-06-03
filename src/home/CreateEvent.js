@@ -169,7 +169,7 @@ export default class CreateEvent extends React.Component {
             </FormGroup>
             </Col>
             <Col>
-            <Button onClick={this.submitEvent}>
+            <Button color="success" onClick={this.submitEvent}>
               Create
             </Button>
             </Col>
