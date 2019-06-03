@@ -54,13 +54,15 @@ const handleLeaveEvent = ({id}) => {
 
 
 
-const Row = ({ name, date, place, id }) =>
+const Row = ({ name, date, place, id, size, description}) =>
   <tr>
     <td>{name}</td>
     <td>{date}</td>
-    <td>{place}</td>
-    <td><Button onClick={ () => handleJoinEvent({id})}>Join</Button></td>
-    <td><Button onClick={ () => handleLeaveEvent({id})}>Leave</Button></td>
+    <td>{place}</td><br/>
+    <td>{size}</td>
+    <td>{description}</td>
+    <td><Button color="success" onClick={ () => handleJoinEvent({id})}>Join</Button></td>
+    <td><Button color="danger" onClick={ () => handleLeaveEvent({id})}>Leave</Button></td>
   </tr>
 
 class Event extends React.Component {
@@ -137,11 +139,15 @@ class Event extends React.Component {
     });
     }
 
+
+
   render () {
     const { events } = this.state;
-    //const { search } = this.state;
+
     return (
-      <div>
+      <div
+        style={{   textAlign: "center"}}
+        >
         <input
           type="text"
           name="text"
@@ -149,21 +155,36 @@ class Event extends React.Component {
           //value={this.state.search}
           ref={node => this.search = node}
           onChange={this.onChange}
+          style={{width:"300px"}}
+
+
         />
-        <Button onClick={this.onChange}>
-          Search
-        </Button>
+
+         <div style={{textAlign: "center"}}>
+            <Button color="success"
+                    href="/createevent"
+                    style={{width:"300px"}}>
+          Create </Button>
+         </div>
+
 
       <Table striped>
         <thead>
         <tr>
           <th>Event title</th>
           <th>Date</th>
-          <th>Place</th>
+          <th>Place</th><br/>
+          <th>Size</th>
+          <th>Participants</th>
+
+
         </tr>
         </thead>
         <tbody>
         {events.map(Row)}
+
+
+
         </tbody>
       </Table>
       </div>

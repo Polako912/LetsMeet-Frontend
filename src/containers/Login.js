@@ -144,7 +144,7 @@ export default class Login extends Component {
           <Button to href='/signup' color="link" size="sm">
             Don't have account?
           </Button>
-          <Button disabled={!this.validateForm} onClick={this.submitForm}>
+          <Button disabled={!this.validateForm} onClick={this.submitForm} color="primary">
             Login
           </Button>
         </form>
